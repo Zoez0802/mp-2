@@ -9,7 +9,6 @@ const ParentDiv = styled.div`
   border: 5px #AF9CCB solid;
 `;
 
-
 export default function App(){
     const [data, setData] = useState<BreedInfo[]>([]);
 

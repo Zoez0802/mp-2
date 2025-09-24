@@ -5,10 +5,7 @@ export interface BreedInfo {
     attributes: {
         name: string;
         description: string;
-        life: {
-            min: number;
-            max: number;
-        };
+        life: { min: number; max: number; };
         hypoallergenic: boolean;
     };
 }

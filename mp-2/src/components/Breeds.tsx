@@ -30,11 +30,10 @@ export default function Breeds(props: { data: BreedInfo[] }) {
                 props.data.map((breed: BreedInfo) =>
 
                     <OneBreedDiv key={breed.id} hypoallergenic={Boolean(breed.attributes?.hypoallergenic)}> {/* passes a true/false flag into the styled component */}
-                        {/* because in the dogApi that I choose, actual details are nested inside an attributes object, soso I have to access everything through breed.attributes instead of directly (like in the Rick & Morty).  */}
+                        {/* because in the dogApi that I choose, actual details are nested inside an attributes object, so I have to access everything through breed.attributes instead of directly (like in the Rick & Morty).  */}
                         <p>{/* if both min and max exist, show min to max years*/}
                             {breed.attributes.life.min && breed.attributes.life.max
-                                ? `${breed.attributes.life.min} - ${breed.attributes.life.max} yrs`
-                                : ""}
+                                ? `${breed.attributes.life.min} - ${breed.attributes.life.max} yrs` : ""}
                         </p>
 
                         <p>{breed.attributes.description ? breed.attributes.description : ""}</p>

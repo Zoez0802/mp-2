@@ -15,9 +15,9 @@ export default function App(){
     // useEffect Hook for error handling and re-rendering.
     useEffect(() => {
         async function fetchData() {
-            const resp = await fetch("https://dogapi.dog/api/v2/breeds");
-            const json: { data: BreedInfo[] } = await resp.json();
-            setData(json.data);
+            const rawData = await fetch("https://dogapi.dog/api/v2/breeds");
+            const { results }: { results: BreedInfo[] } = await rawData.json();
+            setData(results);
         }
         fetchData()
             .then(() => console.log("Data fetched successfully"))
@@ -28,7 +28,7 @@ export default function App(){
 
     return (
         <ParentDiv>
-            <Breeds data={data} />
+            <Breeds data={data}/>
         </ParentDiv>
     );
 }

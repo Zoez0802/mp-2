@@ -16,9 +16,11 @@ export default function App(){
     useEffect(() => {
         async function fetchData() {
             const rawData = await fetch("https://dogapi.dog/api/v2/breeds");
-            const { results }: { results: BreedInfo[] } = await rawData.json();
-            setData(results);
+            const {data}: {data: BreedInfo[]} = await rawData.json();
+            setData(data);
         }
+
+
         fetchData()
             .then(() => console.log("Data fetched successfully"))
             .catch((e: Error) => console.log("There was the error: " + e));
